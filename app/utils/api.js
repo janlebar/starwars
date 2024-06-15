@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-export const fetchCharacters = async () => {
+export const fetchCharacter = async () => {
   try {
     const response = await axios.get('https://swapi.dev/api/people/1/');
-    return response.data.results;
+    return response.data;  // Returns the single character's data
   } catch (error) {
-    console.error("Error api data", error);
-    return [];
+    console.error("Error fetching data from API", error);
+    return null;
   }
 };

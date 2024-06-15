@@ -1,31 +1,51 @@
 "use client";
 
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
 import Characters from './components/Edit';
-
-
-
+import { fetchCharacter } from './utils/api';
 
 const MainPage = () => {
+  const [character, setCharacter] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-    const initialAttributes = {
-        id: '1',
-        name: 'Yoda',
-        height: '66',
-        mass: '13',
-        hair_color: 'White',
-        skin_color: 'Green',
-        eye_color: 'Green-gold',
-        birth_year: '896BBY',
-        gender: 'Male',
-      };
+  useEffect(() => {
+    const getCharacter = async () => {
+      const fetchedCharacter = await fetchCharacter();
+      if (fetchedCharacter) {
+        // Transform API data to match initialAttributes format
+        const initialAttributes = {
+          id: fetchedCharacter.url.split('/').filter(Boolean).pop(),  // Extract ID from URL
+          name: fetchedCharacter.name,
+          height: fetchedCharacter.height,
+          mass: fetchedCharacter.mass,
+          hair_color: fetchedCharacter.hair_color,
+          skin_color: fetchedCharacter.skin_color,
+          eye_color: fetchedCharacter.eye_color,
+          birth_year: fetchedCharacter.birth_year,
+          gender: fetchedCharacter.gender,
+        };
+        setCharacter(initialAttributes);
+      }
+      setLoading(false);
+    };
 
+    getCharacter();
+  }, []);
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
-    return (
-        <div><Characters initialAttributes={initialAttributes} onChange={(attributes) => console.log(attributes)}/></div>
-    );
-}
+  return (
+    <div>
+      {character ? (
+        <Characters initialAttributes={character} onChange={(attributes) => console.log(attributes)} />
+      ) : (
+        <div>Error loading character data.</div>
+      )}
+    </div>
+  );
+};
 
 export default MainPage;
+
