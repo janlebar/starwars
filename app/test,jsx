@@ -1,0 +1,44 @@
+"use client"
+import React, { useState } from 'react';
+
+const initialAttributes = {
+  id: '1',
+  name: 'Yoda',
+  height: '66',
+  mass: '13',
+  hair_color: 'White',
+  skin_color: 'Green',
+  eye_color: 'Green-gold',
+  birth_year: '896BBY',
+  gender: 'Male',
+};
+
+
+
+
+const Attributes = () => {
+  const [attributes, setAttributes] = useState([initialAttributes]); // TODO: get attributes from API
+
+  const handleChange = (event) => {
+      setInputValue(event.target.value);
+  }
+
+  const handleSubmit = (event) => {
+      event.preventDefault();
+
+      setInputValue('');
+  }
+
+  return (
+      <div>
+          <form onSubmit={handleSubmit}>
+              <input type="text" value={inputValue} onChange={handleChange} />
+
+              <button type="submit">Edit</button>
+          </form>
+      </div>
+  )
+}
+
+
+export default Attributes;
