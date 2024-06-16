@@ -24,14 +24,21 @@ const Characters = ({ initialAttributes, onChange }) => {
   };
 
   return (
-    <div className="relative flex gap-0 h-[614.24px]">
-      <div className="bg-[url('../public/1.jpeg')] bg-cover bg-center w-1/3"></div>
-      <div className="bg-[url('../public/2.jpeg')] bg-cover bg-center w-1/3"></div>
-      <div className="bg-[url('../public/3.jpeg')] bg-cover bg-center w-1/3"></div>
+    <div className="relative flex gap-6 h-[614.24px]">
+      <div className="w-1/3 relative rounded-lg overflow-hidden">
+      <div className="absolute inset-0 bg-[url('../public/1.jpeg')] bg-cover bg-center h-full"></div>
+      </div>
+      <div className="w-1/3 relative rounded-lg overflow-hidden">
+      <div className="absolute inset-0 bg-[url('../public/2.jpeg')] bg-cover bg-center h-full"></div>
+      </div>
+      <div className="w-1/3 relative rounded-lg overflow-hidden">
+      <div className="absolute inset-0 bg-[url('../public/3.jpeg')] bg-cover bg-center h-full"></div>
+
+      </div>
 
       <form 
         onSubmit={(e) => e.preventDefault()} 
-        className="absolute inset-0 flex flex-col justify-center p-8 bg-white bg-opacity-70 rounded-tl-lg"
+        className="absolute inset-0 flex flex-col justify-center p-8 bg-white bg-opacity-0 rounded-tl-lg"
       >
         <div className="flex items-center mb-4">
           <p className="mr-4">Name:</p>
