@@ -49,7 +49,7 @@ const MainPage = () => {
   return (
     <div>
       <Header />
-      <div className="mt-[127px] drop-shadow-[0_0_250px_rgba(227,214,29,0.4)] px-80">
+      <div className="mt-[127px] drop-shadow-[0_0_250px_rgba(227,214,29,0.4)] pb-40">
         {characters.length ? (
           <Characters
             initialAttributesArray={characters}
