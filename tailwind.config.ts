@@ -13,8 +13,18 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        "droid-sans": ["Droid Sans", "sans-serif"],
+      },
+      fontSize: {
+        "24px": "24px",
+      },
+      lineHeight: {
+        "28px": "28.11px",
+      },
     },
   },
   plugins: [],
 };
+
 export default config;
