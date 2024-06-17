@@ -49,7 +49,7 @@ const ImageForm = ({ initialAttributes, onChange, imageUrl }) => {
                         className="w-full relative bg-white bg-opacity-0 rounded-lg p-8"
                     >
                         <div className="flex items-center mb-4">
-                            <p className="mr-4">Name:</p>
+                            <p className="mr-4 text-white">Name:</p>
                             <input
                                 type="text"
                                 value={attributes.name}
@@ -60,7 +60,7 @@ const ImageForm = ({ initialAttributes, onChange, imageUrl }) => {
                             />
                         </div>
                         <div className="flex items-center mb-4">
-                            <p className="mr-4">Height:</p>
+                            <p className="mr-4 text-white">Height:</p>
                             <input
                                 type="text"
                                 value={attributes.height}
@@ -71,7 +71,7 @@ const ImageForm = ({ initialAttributes, onChange, imageUrl }) => {
                             />
                         </div>
                         <div className="flex items-center mb-4">
-                            <p className="mr-4">Mass:</p>
+                            <p className="mr-4 text-white">Mass:</p>
                             <input
                                 type="text"
                                 value={attributes.mass}
@@ -82,7 +82,7 @@ const ImageForm = ({ initialAttributes, onChange, imageUrl }) => {
                             />
                         </div>
                         <div className="flex items-center mb-4">
-                            <p className="mr-4">Hair Color:</p>
+                            <p className="mr-4 text-white">Hair Color:</p>
                             <input
                                 type="text"
                                 value={attributes.hair_color}
@@ -93,7 +93,7 @@ const ImageForm = ({ initialAttributes, onChange, imageUrl }) => {
                             />
                         </div>
                         <div className="flex items-center mb-4">
-                            <p className="mr-4">Skin Color:</p>
+                            <p className="mr-4 text-white">Skin Color:</p>
                             <input
                                 type="text"
                                 value={attributes.skin_color}
@@ -104,7 +104,7 @@ const ImageForm = ({ initialAttributes, onChange, imageUrl }) => {
                             />
                         </div>
                         <div className="flex items-center mb-4">
-                            <p className="mr-4">Eye Color:</p>
+                            <p className="mr-4 text-white">Eye Color:</p>
                             <input
                                 type="text"
                                 value={attributes.eye_color}
@@ -115,7 +115,7 @@ const ImageForm = ({ initialAttributes, onChange, imageUrl }) => {
                             />
                         </div>
                         <div className="flex items-center mb-4">
-                            <p className="mr-4">Birth Year:</p>
+                            <p className="mr-4 text-white">Birth Year:</p>
                             <input
                                 type="text"
                                 value={attributes.birth_year}
@@ -126,7 +126,7 @@ const ImageForm = ({ initialAttributes, onChange, imageUrl }) => {
                             />
                         </div>
                         <div className="flex items-center mb-4">
-                            <p className="mr-4">Gender:</p>
+                            <p className="mr-4 text-white">Gender:</p>
                             <input
                                 type="text"
                                 value={attributes.gender}
