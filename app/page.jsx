@@ -10,12 +10,11 @@ const MainPage = () => {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // use effect na vrnjene vrednosti iy api-ja
+  // use effect na vrnjene vrednosti iy api-ja, mapiranje podatkov
   useEffect(() => {
     const getCharacters = async () => {
       const characterIds = [1, 4, 10]; // 
       const fetchedCharacters = await Promise.all(characterIds.map(id => fetchCharacter(id)));
-      
       const initialAttributesArray = fetchedCharacters.map((fetchedCharacter, index) => ({
         id: fetchedCharacter.url.split('/').filter(Boolean).pop(), 
         name: fetchedCharacter.name,
