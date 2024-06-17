@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageForm from './ImageForm'; // Adjust the import path as necessary
+import ImageForm from './ImageForm'; 
 
 const Characters = ({ initialAttributesArray, onChange }) => {
     return (
@@ -9,7 +9,7 @@ const Characters = ({ initialAttributesArray, onChange }) => {
                     key={index}
                     initialAttributes={attributes}
                     onChange={(newAttributes) => onChange(index, newAttributes)}
-                    imageUrl={`./images/${index + 1}.jpeg`} // Ensure this path matches your public folder setup
+                    imageUrl={`./images/${index + 1}.jpeg`} 
                 />
             ))}
         </div>

@@ -5,18 +5,19 @@ import { fetchCharacter } from './utils/api';
 import Header from './components/Header';
 import Characters from './components/Characters';
 
-
+// uporabim use state za "shranjene vrednosti kerakterjev"
 const MainPage = () => {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // use effect na vrnjene vrednosti iy api-ja
   useEffect(() => {
     const getCharacters = async () => {
-      const characterIds = [1, 4, 10]; // IDs of the characters to fetch
+      const characterIds = [1, 4, 10]; // 
       const fetchedCharacters = await Promise.all(characterIds.map(id => fetchCharacter(id)));
       
       const initialAttributesArray = fetchedCharacters.map((fetchedCharacter, index) => ({
-        id: fetchedCharacter.url.split('/').filter(Boolean).pop(), // Extract ID from URL
+        id: fetchedCharacter.url.split('/').filter(Boolean).pop(), 
         name: fetchedCharacter.name,
         height: fetchedCharacter.height,
         mass: fetchedCharacter.mass,
@@ -47,10 +48,11 @@ const MainPage = () => {
   }
 
   return (
-    <div>
+    <div style={{ backgroundColor: 'black' }}>
       <Header />
       <div className="mt-[127px] drop-shadow-[0_0_250px_rgba(227,214,29,0.4)] pb-40">
         {characters.length ? (
+          // passam vrednosti v komponento 
           <Characters
             initialAttributesArray={characters}
             onChange={handleAttributesChange}

@@ -11,17 +11,18 @@ const ImageForm = ({ initialAttributes, onChange, imageUrl }) => {
             [attributeName]: event.target.value
         }));
     };
-
+    
     const handleEditClick = () => {
         if (isEditMode) {
-            onChange(attributes); // Save changes when exiting edit mode
+            onChange(attributes); 
         }
-        setIsEditMode(!isEditMode); // Toggle edit mode
+        setIsEditMode(!isEditMode);
     };
 
     const inputStyle = {
         backgroundColor: 'transparent',
         border: isEditMode ? '1px solid black' : 'none',
+        color: 'white',
         
     };
 
@@ -37,12 +38,12 @@ const ImageForm = ({ initialAttributes, onChange, imageUrl }) => {
                     backgroundImage: `url(${imageUrl})`, 
                     backgroundSize: 'cover', 
                     backgroundPosition: 'center', 
-                    minHeight: '120vh', // Ensures the container takes up the full viewport height
+                    minHeight: '120vh', 
                     overflow: 'hidden',
-                    borderRadius: '10px', // Adds rounded corners
+                    borderRadius: '10px', 
                 }}
             >
-                <div className="w-full flex items-end"> {/* New container to align the form at the bottom */}
+                <div className="w-full flex items-end"> 
                     <form
                         onSubmit={(e) => e.preventDefault()}
                         className="w-full relative bg-white bg-opacity-0 rounded-lg p-8"
