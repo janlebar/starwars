@@ -1,33 +1,42 @@
+
 import React, { useState } from 'react';
 import Script from 'next/script';
 
+
+// Komponenta sprejema tri propse
 const ImageForm = ({ initialAttributes, onChange, imageUrl }) => {
+
     const [attributes, setAttributes] = useState(initialAttributes);
     const [isEditMode, setIsEditMode] = useState(false);
 
     const handleChange = (attributeName) => (event) => {
+        // Stanje atributov z novo vrednostjo
         setAttributes(oldValue => ({
             ...oldValue,
             [attributeName]: event.target.value
         }));
     };
     
+    // Funkcija za urejanje
     const handleEditClick = () => {
         if (isEditMode) {
+            // Če je v načinu urejanja kliče onChange s trenutnimi vrednostmi
             onChange(attributes); 
         }
+        // Edit 
         setIsEditMode(!isEditMode);
     };
 
+    // Stili
     const inputStyle = {
         backgroundColor: 'transparent',
         border: isEditMode ? '1px solid black' : 'none',
         color: 'white',
-        
     };
 
     return (
         <>
+            {/*  Google Fonts ya Droid Sansa */}
             <Script
                 strategy="beforeInteractive"
                 src="https://fonts.googleapis.com/css2?family=Droid+Sans:wght@700&display=swap"
@@ -43,11 +52,13 @@ const ImageForm = ({ initialAttributes, onChange, imageUrl }) => {
                     borderRadius: '10px', 
                 }}
             >
+                {/* Kontejner za formo, poravnan na dno */}
                 <div className="w-full flex items-end"> 
                     <form
                         onSubmit={(e) => e.preventDefault()}
                         className="w-full relative bg-white bg-opacity-0 rounded-lg p-8"
                     >
+                       
                         <div className="flex items-center mb-4">
                             <p className="mr-4 text-white">Name:</p>
                             <input
@@ -59,6 +70,7 @@ const ImageForm = ({ initialAttributes, onChange, imageUrl }) => {
                                 className="flex-1"
                             />
                         </div>
+       
                         <div className="flex items-center mb-4">
                             <p className="mr-4 text-white">Height:</p>
                             <input
@@ -70,6 +82,7 @@ const ImageForm = ({ initialAttributes, onChange, imageUrl }) => {
                                 className="flex-1"
                             />
                         </div>
+               
                         <div className="flex items-center mb-4">
                             <p className="mr-4 text-white">Mass:</p>
                             <input
@@ -81,6 +94,7 @@ const ImageForm = ({ initialAttributes, onChange, imageUrl }) => {
                                 className="flex-1"
                             />
                         </div>
+                 
                         <div className="flex items-center mb-4">
                             <p className="mr-4 text-white">Hair Color:</p>
                             <input
@@ -92,6 +106,7 @@ const ImageForm = ({ initialAttributes, onChange, imageUrl }) => {
                                 className="flex-1"
                             />
                         </div>
+        
                         <div className="flex items-center mb-4">
                             <p className="mr-4 text-white">Skin Color:</p>
                             <input
@@ -103,6 +118,7 @@ const ImageForm = ({ initialAttributes, onChange, imageUrl }) => {
                                 className="flex-1"
                             />
                         </div>
+              
                         <div className="flex items-center mb-4">
                             <p className="mr-4 text-white">Eye Color:</p>
                             <input
@@ -114,6 +130,7 @@ const ImageForm = ({ initialAttributes, onChange, imageUrl }) => {
                                 className="flex-1"
                             />
                         </div>
+            
                         <div className="flex items-center mb-4">
                             <p className="mr-4 text-white">Birth Year:</p>
                             <input
@@ -125,6 +142,7 @@ const ImageForm = ({ initialAttributes, onChange, imageUrl }) => {
                                 className="flex-1"
                             />
                         </div>
+       
                         <div className="flex items-center mb-4">
                             <p className="mr-4 text-white">Gender:</p>
                             <input
@@ -136,16 +154,17 @@ const ImageForm = ({ initialAttributes, onChange, imageUrl }) => {
                                 className="flex-1"
                             />
                         </div>
+          
                         <div style={{ display: 'flex', justifyContent: 'center' }}>
-    <button
-        type="button"
-        onClick={handleEditClick}
-        className="mt-4 pl-7 pr-7 pt-2 pb-2 bg-yellow-400 text-black rounded font-droid-sans text-24px font-bold leading-28px text-left"
-        style={{ backgroundColor: '#E3D61D' }}
-    >
-        {isEditMode ? 'Save' : 'Edit'}
-    </button>
-</div>
+                            <button
+                                type="button"
+                                onClick={handleEditClick}
+                                className="mt-4 pl-7 pr-7 pt-2 pb-2 bg-yellow-400 text-black rounded font-droid-sans text-24px font-bold leading-28px text-left"
+                                style={{ backgroundColor: '#E3D61D' }}
+                            >
+                                {isEditMode ? 'Save' : 'Edit'}
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -153,4 +172,6 @@ const ImageForm = ({ initialAttributes, onChange, imageUrl }) => {
     );
 };
 
+
 export default ImageForm;
+
