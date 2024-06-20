@@ -1,17 +1,7 @@
 import React, { useState } from 'react';
 import Script from 'next/script';
 
-// Define the types for the props
-interface StarwarsCharacters {
-  name: string;
-  height: string;
-  mass: string;
-  hair_color: string;
-  skin_color: string;
-  eye_color: string;
-  birth_year: string;
-  gender: string;
-}
+import type { StarwarsCharacters } from './Characters';
 
 interface ImageFormProps {
   initialAttributes: StarwarsCharacters;

@@ -1,7 +1,9 @@
 import React from 'react';
 import ImageForm from './ImageForm';
 
-interface StarwarsCharacters {
+export interface StarwarsCharacters {
+  id: string;
+  url: string;
   name: string;
   height: string;
   mass: string;

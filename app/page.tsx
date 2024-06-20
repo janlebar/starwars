@@ -3,19 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import { fetchCharacter } from './utils/api';
 import Header from './components/Header';
-import Characters from './components/Characters';
+import Characters, {StarwarsCharacters} from './components/Characters';
 
-interface StarwarsCharacters {
-  id: string;
-  name: string;
-  height: string;
-  mass: string;
-  hair_color: string;
-  skin_color: string;
-  eye_color: string;
-  birth_year: string;
-  gender: string;
-}
 
 const MainPage: React.FC = () => {
   const [characters, setCharacters] = useState<StarwarsCharacters[]>([]);
@@ -29,7 +18,8 @@ const MainPage: React.FC = () => {
       const initialAttributesArray = fetchedCharacters
         .filter((fetchedCharacter): fetchedCharacter is StarwarsCharacters => fetchedCharacter !== null)
         .map((fetchedCharacter, index) => ({
-          id: fetchedCharacter.url.split('/').filter(Boolean).pop() as string, 
+          id: fetchedCharacter.url.split('/').filter(Boolean).pop() as string,
+          url: fetchedCharacter.url,
           name: fetchedCharacter.name,
           height: fetchedCharacter.height,
           mass: fetchedCharacter.mass,
