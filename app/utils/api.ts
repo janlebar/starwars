@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-// Definram tipe za taypscript
+// Definram tipe za taypscript (custom prop)
 export interface StarwarsCharacters {
   id: string;
   url: string;
