@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Script from 'next/script';
 
-import type { StarwarsCharacters } from './Characters';
+import type {StarwarsCharacters} from '../utils/api'
 
 interface ImageFormProps {
   initialAttributes: StarwarsCharacters;

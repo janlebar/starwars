@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 // Definram tipe za taypscript
-interface StarwarsCharacters {
+export interface StarwarsCharacters {
+  id: string;
+  url: string;
   name: string;
   height: string;
   mass: string;

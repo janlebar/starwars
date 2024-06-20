@@ -3,7 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import { fetchCharacter } from './utils/api';
 import Header from './components/Header';
-import Characters, {StarwarsCharacters} from './components/Characters';
+import Characters from './components/Characters';
+import type {StarwarsCharacters} from './utils/api'
 
 
 const MainPage: React.FC = () => {
