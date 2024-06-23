@@ -37,7 +37,9 @@ const ImageForm: React.FC<ImageFormProps> = ({ initialAttributes, onChange, imag
     backgroundColor: 'transparent',
     border: isEditMode ? '1px solid black' : 'none',
     color: 'white',
-  };
+    fontWeight: 'bold',
+    fontFamily: '"Droid Sans", sans-serif',
+  };  
 
   return (
     <>
