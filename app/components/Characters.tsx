@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageForm from './ImageForm';
+import ImageForm from './Form';
 import type {StarwarsCharacters} from '../utils/api'
 
 interface CharactersProps {
